@@ -23,5 +23,4 @@ class Request:
 
         method = getattr(requests, method)
         response = method(endpoint, **kwargs)
-        print(type(response))
         return getattr(response, structure)
