@@ -15,6 +15,7 @@ def main():
     govuk_html = request.dynamic_request(method='GET',
                            endpoint=os.getenv('uk-gov-register-of-sponsors'),
                            structure='text')
+    print(type(govuk_html))
 
 if __name__ == "__main__":
     main()

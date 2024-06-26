@@ -7,7 +7,7 @@ class Request:
         pass
 
     @staticmethod
-    def dynamic_request(**kwargs) -> object:
+    def dynamic_request(**kwargs: dict) -> str | dict:
         method = kwargs.get('method', 'get').lower()
         endpoint = kwargs.get('endpoint')
         structure = kwargs.get('structure', 'json')
@@ -23,5 +23,5 @@ class Request:
 
         method = getattr(requests, method)
         response = method(endpoint, **kwargs)
-
+        print(type(response))
         return getattr(response, structure)
