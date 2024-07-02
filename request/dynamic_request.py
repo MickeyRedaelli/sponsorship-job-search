@@ -22,8 +22,8 @@ class Request:
         kwargs.pop('structure')
 
         try:
-                method = getattr(requests, method)
+            method = getattr(requests, method)
         except AttributeError:
-                raise ValueError(f"Invalid method: {method}")
+            raise ValueError(f"Invalid method: {method}")
         response = method(endpoint, **kwargs)
         return getattr(response, structure)
