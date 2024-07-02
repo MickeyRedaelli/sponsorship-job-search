@@ -9,6 +9,5 @@ def main():
     for k, v in variable_map.items():
         os.environ[k] = v
 
-
 if __name__ == "__main__":
     main()
